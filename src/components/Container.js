@@ -4,7 +4,7 @@ import Header from "./Header";
 
 function Container({ children }) {
   return (
-    <main>
+    <main className="min-w-[40rem]">
       <Header />
       <div>{children}</div>
       {/* <Footer /> */}

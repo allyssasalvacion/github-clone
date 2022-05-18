@@ -18,7 +18,7 @@ function Header() {
   return (
     <Popover className="relative bg-gray-800 border-b-2 border-gray-100">
       <div className="mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
+        <div className="flex justify-center lg:justify-between items-center py-4 md:space-x-10">
           <div className="flex justify-start items-center space-x-6">
             <div className="flex justify-start space-x-6">
               <a
@@ -49,10 +49,10 @@ function Header() {
                 name="find-a-repo"
                 id="find-a-repo"
                 placeholder="Search or jump to..."
-                className="text-sm px-3 py-[3px] block shadow-sm sm:text-sm border-gray-100 border-[1px] rounded-md bg-transparent w-72 text-white"
+                className="hidden lg:block text-sm px-3 py-[3px] shadow-sm sm:text-sm border-gray-100 border-[1px] rounded-md bg-transparent w-72 text-white"
               />
             </div>
-            <Popover.Group as="nav" className="hidden md:flex space-x-10">
+            <Popover.Group as="nav" className="hidden lg:flex space-x-10">
               <a
                 href="facebook.com"
                 className="text-base font-medium text-white hover:text-gray-200"
@@ -79,7 +79,7 @@ function Header() {
               </a>
             </Popover.Group>
           </div>
-          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 space-x-3">
+          <div className="hidden lg:flex items-center justify-end md:flex-1 lg:w-0 space-x-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"

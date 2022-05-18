@@ -1,5 +1,6 @@
 import React from "react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
+import { Link } from "react-router-dom";
 
 import { Menu } from "@headlessui/react";
 
@@ -48,8 +49,8 @@ function Filters() {
           </div>
         </Menu>
       </div>
-      <a
-        href="facebook.com"
+      <Link
+        to="/new"
         className="flex items-center justify-center px-4 py-[5px] border rounded-md text-white bg-green-600 border-green-600 hover:bg-green-700 gap-2 w-auto text-sm"
       >
         <svg
@@ -67,7 +68,7 @@ function Filters() {
           />
         </svg>
         New
-      </a>
+      </Link>
     </div>
   );
 }

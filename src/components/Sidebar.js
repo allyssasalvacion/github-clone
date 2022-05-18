@@ -26,16 +26,22 @@ function Sidebar() {
   return (
     <div>
       <div className="flex flex-col justify-center">
-        <img
-          className="rounded-full w-full h-auto -mt-10 object-cover border
+        <div className="flex lg:flex-col flex-row lg:gap-0 gap-6 lg:mt-0 mt-6">
+          <img
+            className="rounded-full lg:w-full w-32 h-auto lg:-mt-10 object-cover border
         border-gray-400 bg-white"
-          src={data && data.user.avatarUrl}
-          alt=""
-        />
-        <h1 className="mt-6 font-bold text-2xl text-gray-800">
-          {data && data.user.name}
-        </h1>
-        <p className="mt-0 text-gray-600 text-xl">{data && data.user.login}</p>
+            src={data && data.user.avatarUrl}
+            alt=""
+          />
+          <div>
+            <h1 className="mt-6 font-bold text-2xl text-gray-800">
+              {data && data.user.name}
+            </h1>
+            <p className="mt-0 text-gray-600 text-xl">
+              {data && data.user.login}
+            </p>
+          </div>
+        </div>
         <p className="text-gray-600 text-lg mt-5">{data && data.user.bio}</p>
         <a
           href="facebook.com"

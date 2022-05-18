@@ -1,12 +1,13 @@
 import React from "react";
 import { useQuery, gql, useMutation } from "@apollo/client";
 
-const GET_REPOSITORIES = gql`
+export const GET_REPOSITORIES = gql`
   query getRepositories {
     viewer {
       repositories(first: 100) {
         nodes {
           name
+          description
           visibility
           primaryLanguage {
             name
@@ -77,7 +78,27 @@ function Repositories() {
         })}`;
       }
     } else {
-      return `${Difference_In_Days} days ago`;
+      if (Difference_In_Days > 0) {
+        return `${Difference_In_Days} days ago`;
+      } else {
+        let repoDate = new Date(date);
+
+        var seconds = Math.floor((new Date() - repoDate) / 1000);
+        var interval = seconds / 31536000;
+
+        interval = seconds / 3600;
+        if (interval > 1) {
+          if (interval === 1) return Math.floor(interval) + " hour ago";
+          else return Math.floor(interval) + " hours ago";
+        }
+        interval = seconds / 60;
+        if (interval > 1) {
+          if (interval === 1) return Math.floor(interval) + " minute ago";
+          else return Math.floor(interval) + " minutes ago";
+        }
+        if (seconds === 1) return Math.floor(seconds) + " second ago";
+        else return Math.floor(seconds) + " seconds ago";
+      }
     }
   };
 
@@ -115,6 +136,7 @@ function Repositories() {
                       {repo.isArchived ? "Archive" : ""}
                     </p>
                   </div>
+                  <div className="mt-2 text-gray-600">{repo.description}</div>
                   <div className="flex flex-row text-gray-500 font-normal text-sm mt-5 space-x-5">
                     {repo.primaryLanguage !== null ? (
                       <p className="flex space-x-1 items-center">

@@ -15,7 +15,7 @@ function Profile() {
 
   return (
     <Container>
-      <div className="relative bg-white py-6 mb-20">
+      <div className="relative bg-white py-6 px-4 mb-20">
         <div className="border-b border-gray-400">
           <Tab.Group defaultIndex={1}>
             <Tab.List className="flex space-x-2 items-center justify-center">
@@ -52,7 +52,7 @@ function Profile() {
           </Tab.Group>
         </div>
         <div className="max-w-[90rem] mx-auto">
-          <div className="grid grid-cols-8 gap-10">
+          <div className="lg:grid lg:grid-cols-8 gap-10 flex flex-col">
             <div className="col-span-2">
               <Sidebar />
             </div>
